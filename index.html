@@ -28,7 +28,8 @@ nav a:hover{color:var(--pri)}
 
 section{padding:110px 56px}
 
-.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero > div{display:flex;flex-direction:column;justify-content:center}
 .hero h2{font-size:52px;line-height:1.1}
 .hero h2 span{background:linear-gradient(90deg,var(--pri),var(--sec));-webkit-background-clip:text;color:transparent}
 .hero p{margin:18px 0;color:var(--mut);font-size:18px}
@@ -45,7 +46,7 @@ section{padding:110px 56px}
 .section-title{font-size:34px;margin-bottom:28px}
 .section-title span{color:var(--pri)}
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:stretch}
 .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:26px;transition:.3s}
 .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.45)}
 .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(34,211,238,.15);color:var(--pri);font-size:12px;margin-bottom:10px}
@@ -60,6 +61,12 @@ section{padding:110px 56px}
 footer{background:#020617;border-top:1px solid rgba(255,255,255,.08);padding:40px 56px;text-align:center;color:var(--mut)}
 
 @media(max-width:900px){header{padding:14px 22px}section{padding:90px 22px}.hero{grid-template-columns:1fr;text-align:center}.split{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
+
+.reveal{animation:fadeUp .9s ease both}
+.reveal.delay{animation-delay:.3s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.floating{animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 </style>
 </head>
 <body>
@@ -77,7 +84,7 @@ footer{background:#020617;border-top:1px solid rgba(255,255,255,.08);padding:40p
 
 <section class="hero" id="home">
   <div class="glass">
-    <span class="badge">MULTI-ROLE PORTFOLIO</span>
+    <span class="badge">MULTI‑ROLE PORTFOLIO</span>
     <h2 class="reveal">Data Analyst <span>&</span><br/>Digital Marketer</h2>
     <p class="reveal delay">Turning data into insights and clicks into conversions using analytics & Google Ads.</p>
     <div>
@@ -87,9 +94,17 @@ footer{background:#020617;border-top:1px solid rgba(255,255,255,.08);padding:40p
     <div class="stats">
       <div class="stat"><h4>1+</h4><p>Years Experience</p></div>
       <div class="stat"><h4>10+</h4><p>Campaigns</p></div>
-      <div class="sta
+      <div class="stat"><h4>5+</h4><p>Dashboards</p></div>
+    </div>
+  </div>
+
+  <div class="glass floating">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="analytics" style="width:100%;border-radius:18px;"/>
+  </div>
+</section>
 
 <section id="data">
+  <h3 class="section-title"><span>📊</span> Data Analyst Profile</h3>
   <h3 class="section-title">Data Analyst Profile</h3>
   <div class="card">
     <p><b>Role Focus:</b> Data Analyst</p>
@@ -104,6 +119,7 @@ footer{background:#020617;border-top:1px solid rgba(255,255,255,.08);padding:40p
 </section>
 
 <section id="marketing">
+  <h3 class="section-title"><span>📈</span> Digital Marketing & Google Ads</h3>
   <h3 class="section-title">Digital Marketing Profile</h3>
   <div class="card">
     <p><b>Role Focus:</b> Digital Marketing & Google Ads</p>
@@ -159,18 +175,31 @@ footer{background:#020617;border-top:1px solid rgba(255,255,255,.08);padding:40p
 <section id="projects">
   <h3 class="section-title">Projects</h3>
 
-  <h4 id="data-analyst" style="margin-bottom:15px;color:#cbd5f5">📊 Data Analyst Projects</h4>
-  <div class="grid">
-    <div class="card">Sales Data Analysis using Python & SQL</div>
-    <div class="card">Excel Dashboard for Business KPIs</div>
-    <div class="card">Data Cleaning & Automation Script</div>
+  <div class="split">
+    <div class="card">
+      <span class="badge">DATA ANALYST</span>
+      <h4>Nutrify Me</h4>
+      <p>Nutrition data analysis project focused on cleaning food datasets, analyzing calorie & macro trends, and generating insights using Python, SQL, and Excel dashboards.</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">DATA ANALYST</span>
+      <h4>Flood Alert System</h4>
+      <p>Data-driven flood alert system using historical rainfall & water-level data to identify risk patterns and generate early alerts. Includes data preprocessing, analysis, and visualization.</p>
+    </div>
   </div>
 
-  <h4 id="digital-marketing" style="margin:40px 0 15px;color:#cbd5f5">📈 Digital Marketing Projects</h4>
-  <div class="grid">
-    <div class="card">Google Ads Lead Generation Campaign</div>
-    <div class="card">Campaign Performance Analysis (CTR, CPC)</div>
-    <div class="card">Marketing Funnel Optimization</div>
+  <div style="margin-top:40px" class="grid">
+    <div class="card">
+      <span class="badge">DIGITAL MARKETING</span>
+      <h4>Google Ads Lead Generation</h4>
+      <p>Created and optimized Search & Display campaigns focusing on keyword research, ad copy testing, CTR improvement, and conversion tracking.</p>
+    </div>
+    <div class="card">
+      <span class="badge">DIGITAL MARKETING</span>
+      <h4>Campaign Performance Analysis</h4>
+      <p>Analyzed CTR, CPC, and lead quality using reports and dashboards to improve campaign efficiency.</p>
+    </div>
   </div>
 </section>
 
